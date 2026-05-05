@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/miniGo-client-adapter/miniGo-client-adapter-in-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-adapter/miniGo-client-adapter-in-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-adapter/miniGo-client-adapter-out-persistent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-adapter/miniGo-client-adapter-out-persistent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-adapter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-adapter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-application/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-bootstrap/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-bootstrap/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/miniGo-client-domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
