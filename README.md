@@ -1,0 +1,2 @@
+# miniGo
+A test function
