@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS app_user (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(64) NOT NULL,
+    password_hash VARCHAR(100) NULL,
+    open_id VARCHAR(128) NULL,
+    nickname VARCHAR(64) NOT NULL,
+    avatar_url VARCHAR(512) NULL,
+    phone VARCHAR(32) NULL,
+    email VARCHAR(128) NULL,
+    status VARCHAR(16) NOT NULL DEFAULT 'ACTIVE',
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    UNIQUE KEY uk_app_user_username (username),
+    UNIQUE KEY uk_app_user_open_id (open_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

@@ -20,9 +20,12 @@
 
   <properties>
     <miniGo-client.version>1.0-SNAPSHOT</miniGo-client.version>
-    <java.version>25</java.version>
+    <java.version>21</java.version>
     <spring-cloud.version>2025.1.1</spring-cloud.version>
+    <spring-cloud-alibaba.version>2025.1.0.0</spring-cloud-alibaba.version>
     <mybatis-plus.version>3.5.15</mybatis-plus.version>
+    <jjwt.version>0.13.0</jjwt.version>
+    <maven.compiler.proc>full</maven.compiler.proc>
   </properties>
 
   <dependencyManagement>
@@ -31,6 +34,14 @@
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
         <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${spring-cloud-alibaba.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -75,6 +86,24 @@
         <groupId>com.baomidou</groupId>
         <artifactId>mybatis-plus-spring-boot4-starter</artifactId>
         <version>${mybatis-plus.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>${jjwt.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>${jjwt.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>${jjwt.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

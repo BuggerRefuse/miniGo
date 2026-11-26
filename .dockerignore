@@ -1,0 +1,10 @@
+.git
+.idea
+**/*.iml
+**/*.log
+**/target/*
+!miniGo-client-bootstrap/target/miniGo-client-bootstrap-1.0-SNAPSHOT.jar
+docs
+scripts
+compose.yaml
+GLOSSARY.md

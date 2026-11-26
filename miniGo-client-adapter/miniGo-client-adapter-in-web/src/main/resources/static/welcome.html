@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>欢迎 | miniGo</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="welcome-page">
+    <header class="topbar">
+        <div class="brand-word">mini<span>Go</span></div>
+        <div class="topbar-actions">
+            <button id="refresh-button" class="text-button" type="button">刷新会话</button>
+            <button id="logout-button" class="text-button" type="button">退出登录</button>
+        </div>
+    </header>
+
+    <main class="welcome-main">
+        <section class="welcome-hero">
+            <h1 id="greeting">欢迎回来</h1>
+            <p id="welcome-subtitle">正在加载当前登录信息。</p>
+        </section>
+
+        <dl class="profile-grid">
+            <div class="profile-item">
+                <dt>用户名</dt>
+                <dd id="profile-username">-</dd>
+            </div>
+            <div class="profile-item">
+                <dt>显示名称</dt>
+                <dd id="profile-name">-</dd>
+            </div>
+            <div class="profile-item">
+                <dt>账号 ID</dt>
+                <dd id="profile-id">-</dd>
+            </div>
+            <div class="profile-item">
+                <dt>会话状态</dt>
+                <dd id="profile-session">-</dd>
+            </div>
+        </dl>
+    </main>
+</div>
+<script src="/js/api.js"></script>
+<script src="/js/welcome.js"></script>
+</body>
+</html>

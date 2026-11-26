@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录 | miniGo</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main class="login-shell">
+    <section class="brand-panel" aria-label="miniGo">
+        <div class="brand-word">mini<span>Go</span></div>
+        <div class="brand-copy">
+            <p class="eyebrow">Account Access</p>
+            <h1>回到你的<br>围棋空间</h1>
+            <p>登录后继续查看你的账号信息。</p>
+        </div>
+        <div class="brand-meta">
+            <div><strong>miniGo</strong>account space</div>
+            <div><strong>v1.0</strong>local preview</div>
+        </div>
+    </section>
+
+    <section class="form-panel">
+        <div class="form-wrap">
+            <h2 class="form-heading">登录 miniGo</h2>
+            <p class="form-intro">使用账号继续。</p>
+
+            <form id="password-form">
+                <div class="field">
+                    <label for="username">用户名</label>
+                    <input id="username" name="username" autocomplete="username"
+                           value="demo" required>
+                </div>
+                <div class="field">
+                    <label for="password">密码</label>
+                    <input id="password" name="password" type="password"
+                           autocomplete="current-password" value="123456" required>
+                </div>
+                <button id="submit-button" class="primary-button" type="submit">登录</button>
+            </form>
+
+            <p id="form-message" class="form-message" role="alert" aria-live="polite"></p>
+            <p class="demo-note">
+                演示账号：demo / 123456
+            </p>
+        </div>
+    </section>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+name: minigo-client
+
+services:
+  app:
+    container_name: minigo-client-app
+    image: minigo-client:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      TZ: Asia/Shanghai
+      MINIGO_DB_URL: ${MINIGO_DB_URL:-jdbc:mysql://minigo-mysql:3306/minigo_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false}
+      MINIGO_DB_USERNAME: ${MINIGO_DB_USERNAME:-root}
+      MINIGO_DB_PASSWORD: ${MINIGO_DB_PASSWORD:?MINIGO_DB_PASSWORD must be set}
+      REDIS_HOST: ${REDIS_HOST:-minigo-redis}
+      REDIS_PORT: ${REDIS_PORT:-6379}
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-}
+      REDIS_DATABASE: ${REDIS_DATABASE:-0}
+      MINIGO_JWT_SECRET: ${MINIGO_JWT_SECRET:?MINIGO_JWT_SECRET must be set}
+      MINIGO_WECHAT_APP_ID: ${MINIGO_WECHAT_APP_ID:?MINIGO_WECHAT_APP_ID must be set}
+      MINIGO_WECHAT_APP_SECRET: ${MINIGO_WECHAT_APP_SECRET:?MINIGO_WECHAT_APP_SECRET must be set}
+      MINIGO_WECHAT_MOCK_ENABLED: ${MINIGO_WECHAT_MOCK_ENABLED:-false}
+      NACOS_SERVER_ADDR: ${NACOS_SERVER_ADDR:-minigo-nacos:8848}
+      NACOS_USERNAME: ${NACOS_USERNAME:-nacos}
+      NACOS_PASSWORD: ${NACOS_PASSWORD:-nacos}
+    labels:
+      com.minigo.project: minigo-client
+      com.minigo.component: backend
+    networks:
+      - minigo-app-net
+    restart: unless-stopped
+
+networks:
+  minigo-app-net:
+    name: minigo-app-net
+    external: true
