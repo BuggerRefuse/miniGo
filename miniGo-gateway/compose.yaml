@@ -1,0 +1,32 @@
+name: mini-go-gateway
+
+services:
+  gateway:
+    container_name: minigo-gateway
+    image: minigo-gateway:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+      - "127.0.0.1:9091:9091"
+    environment:
+      TZ: Asia/Shanghai
+      SERVER_PORT: 9000
+      MANAGEMENT_PORT: 9091
+      NACOS_SERVER_ADDR: ${NACOS_SERVER_ADDR:-minigo-nacos:8848}
+      NACOS_USERNAME: ${NACOS_USERNAME:-nacos}
+      NACOS_PASSWORD: ${NACOS_PASSWORD:-nacos}
+      CORS_ALLOWED_ORIGIN_PATTERNS: ${CORS_ALLOWED_ORIGIN_PATTERNS:-http://localhost:3000,http://127.0.0.1:3000}
+      MINIGO_JWT_SECRET: ${MINIGO_JWT_SECRET:?MINIGO_JWT_SECRET must be set}
+    labels:
+      com.minigo.project: mini-go-gateway
+      com.minigo.component: gateway
+    networks:
+      - minigo-app-net
+    restart: unless-stopped
+
+networks:
+  minigo-app-net:
+    name: minigo-app-net
+    external: true

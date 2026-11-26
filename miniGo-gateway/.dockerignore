@@ -1,0 +1,9 @@
+.git
+.idea
+**/*.iml
+**/*.log
+**/target/*
+!target/mini-go-gateway.jar
+README.md
+compose.yaml
+scripts
