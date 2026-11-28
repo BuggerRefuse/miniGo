@@ -14,6 +14,7 @@
 
     <modules>
         <module>miniGo-client</module>
+        <module>miniGo-admin</module>
         <module>miniGo-gateway</module>
     </modules>
 </project>

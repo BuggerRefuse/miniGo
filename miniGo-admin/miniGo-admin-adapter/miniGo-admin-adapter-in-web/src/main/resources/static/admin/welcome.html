@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>管理后台 | miniGo</title>
+    <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body class="dashboard-body">
+<header class="topbar">
+    <a class="brand brand-dark" href="/admin/welcome.html">mini<span>Go</span></a>
+    <div class="topbar-actions">
+        <span class="session-badge">管理员会话</span>
+        <button id="logout-button" class="text-button" type="button">退出登录</button>
+    </div>
+</header>
+
+<main class="dashboard">
+    <section class="dashboard-heading">
+        <h1>欢迎，<span id="admin-display-name">管理员</span></h1>
+        <p>当前请求已由网关验证，并通过 Nacos 转发至管理员服务。</p>
+    </section>
+
+    <section class="profile-panel" aria-label="管理员账号信息">
+        <div class="profile-heading">
+            <h2>当前管理员</h2>
+            <span id="profile-status">正在加载</span>
+        </div>
+
+        <dl class="profile-list">
+            <div>
+                <dt>登录身份</dt>
+                <dd>管理员</dd>
+            </div>
+            <div>
+                <dt>管理员账号</dt>
+                <dd id="admin-username">-</dd>
+            </div>
+            <div>
+                <dt>管理员 ID</dt>
+                <dd id="admin-id">-</dd>
+            </div>
+            <div>
+                <dt>访问令牌</dt>
+                <dd id="token-expiry">-</dd>
+            </div>
+        </dl>
+
+        <div class="dashboard-actions">
+            <button id="refresh-button" class="submit-button compact" type="button">
+                刷新登录状态
+            </button>
+            <a class="secondary-link" href="/admin/login.html">切换管理员</a>
+        </div>
+
+        <p id="dashboard-message" class="form-message" role="alert" aria-live="polite"></p>
+    </section>
+</main>
+<script src="/admin/js/api.js"></script>
+<script src="/admin/js/welcome.js"></script>
+</body>
+</html>

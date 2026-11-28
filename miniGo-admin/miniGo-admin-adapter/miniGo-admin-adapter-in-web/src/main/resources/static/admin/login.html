@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>管理员登录 | miniGo</title>
+    <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+<main class="auth-shell">
+    <section class="identity-panel" aria-label="miniGo 管理后台">
+        <a class="brand" href="/admin/login.html">mini<span>Go</span></a>
+        <div class="identity-copy">
+            <h1>管理系统</h1>
+            <p>管理员账号与普通用户账号相互隔离，登录后会进入独立的管理员会话。</p>
+        </div>
+        <p class="panel-footnote">Gateway protected · Internal service</p>
+    </section>
+
+    <section class="form-panel">
+        <div class="form-shell">
+            <div class="form-heading">
+                <h2>管理员登录</h2>
+                <p>请输入管理员账号继续。</p>
+            </div>
+
+            <form id="admin-login-form" novalidate>
+                <label class="field" for="admin-username">
+                    <span>管理员账号</span>
+                    <input id="admin-username" name="username" autocomplete="username"
+                           value="admin" required>
+                </label>
+
+                <label class="field" for="admin-password">
+                    <span>密码</span>
+                    <input id="admin-password" name="password" type="password"
+                           autocomplete="current-password" value="123456" required>
+                </label>
+
+                <button id="admin-submit" class="submit-button" type="submit">
+                    登录管理后台
+                </button>
+            </form>
+
+            <p id="admin-message" class="form-message" role="alert" aria-live="polite"></p>
+            <p class="demo-note">演示账号：admin / 123456</p>
+            <a class="user-link" href="/login.html">返回普通用户登录</a>
+        </div>
+    </section>
+</main>
+<script src="/admin/js/api.js"></script>
+<script src="/admin/js/login.js"></script>
+</body>
+</html>

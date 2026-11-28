@@ -6,6 +6,7 @@ and share the same environment branches.
 ## Modules
 
 - `miniGo-client`: user account and authentication service.
+- `miniGo-admin`: administrator authentication service.
 - `miniGo-gateway`: API gateway, routing, JWT validation, and access logging.
 
 ## Branch Model
@@ -18,7 +19,7 @@ and share the same environment branches.
 
 ## Build
 
-Build both services from the repository root:
+Build all services from the repository root:
 
 ```powershell
 mvn clean test
@@ -32,12 +33,17 @@ mvn clean test
 ```
 
 ```powershell
+cd miniGo-admin
+mvn clean test
+```
+
+```powershell
 cd miniGo-gateway
 mvn clean test
 ```
 
 ## Local Deployment
 
-The client and gateway keep their own `compose.yaml` and deployment scripts
-inside their module directories. Both services use the shared Docker network
-`minigo-app-net` and discover each other through Nacos.
+The client, admin, and gateway keep their own `compose.yaml` and deployment
+scripts inside their module directories. All services use the shared Docker
+network `minigo-app-net` and discover each other through Nacos.

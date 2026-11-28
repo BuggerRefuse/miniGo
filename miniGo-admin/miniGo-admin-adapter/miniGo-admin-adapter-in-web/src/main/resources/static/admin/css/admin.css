@@ -1,0 +1,463 @@
+:root {
+    --ink: #162d2a;
+    --muted: #5f716d;
+    --paper: #edf1ec;
+    --surface: #fffdf8;
+    --line: #d3ddd7;
+    --green: #1f6965;
+    --green-deep: #123b38;
+    --accent: #b85334;
+    --danger: #9c3529;
+    --success: #24735e;
+    --shadow: 0 24px 70px rgba(18, 59, 56, 0.16);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+    background: var(--paper);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    color: #fff;
+    background: var(--green);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
+
+.brand {
+    width: fit-content;
+    color: #fffdf8;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+
+.brand span {
+    color: #f0bd65;
+}
+
+.auth-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(320px, 0.88fr) minmax(440px, 1.12fr);
+    gap: 0;
+    width: min(100%, 1180px);
+    min-height: min(760px, calc(100vh - 48px));
+    margin: 24px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.identity-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 620px;
+    padding: 42px;
+    color: #fffdf8;
+    background: var(--green-deep);
+}
+
+.identity-copy {
+    max-width: 410px;
+}
+
+.identity-copy h1 {
+    margin: 0;
+    font-family: "Songti SC", "STSong", Georgia, serif;
+    font-size: clamp(46px, 5.5vw, 72px);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.identity-copy > p:last-child {
+    max-width: 32em;
+    margin: 26px 0 0;
+    color: rgba(255, 253, 248, 0.74);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.panel-footnote {
+    margin: 0;
+    color: rgba(255, 253, 248, 0.52);
+    font-size: 12px;
+}
+
+.form-panel {
+    display: grid;
+    place-items: center;
+    padding: 48px;
+    background: var(--surface);
+}
+
+.form-shell {
+    width: min(100%, 420px);
+}
+
+.form-heading h2 {
+    margin: 0 0 10px;
+    font-family: "Songti SC", "STSong", Georgia, serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.form-heading p {
+    margin: 0 0 34px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.field {
+    display: grid;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.field span {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.field input {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    color: var(--ink);
+    caret-color: var(--accent);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(31, 105, 101, 0.14);
+}
+
+.submit-button,
+.secondary-link,
+.text-button {
+    min-height: 46px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 4px;
+    color: #fff;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.submit-button:hover {
+    background: #9f4329;
+}
+
+.submit-button:active {
+    transform: translateY(1px);
+}
+
+.submit-button:disabled {
+    cursor: wait;
+    opacity: 0.62;
+}
+
+.submit-button.compact {
+    width: auto;
+    min-width: 152px;
+    padding: 0 20px;
+}
+
+.form-message {
+    min-height: 23px;
+    margin: 14px 0 0;
+    color: var(--danger);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.demo-note {
+    margin: 25px 0 0;
+    padding-top: 20px;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.user-link,
+.secondary-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.user-link {
+    margin-top: 14px;
+}
+
+.dashboard-body {
+    background: var(--paper);
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(100%, 1120px);
+    margin: 0 auto;
+    padding: 26px 28px;
+}
+
+.brand-dark {
+    color: var(--ink);
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.session-badge {
+    padding: 7px 11px;
+    color: var(--success);
+    background: #deebe5;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.text-button {
+    padding: 0 4px;
+    color: var(--green);
+    background: transparent;
+    border: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.dashboard {
+    width: min(100%, 1120px);
+    margin: 0 auto;
+    padding: 72px 28px 90px;
+}
+
+.dashboard-heading {
+    max-width: 720px;
+}
+
+.dashboard-heading h1 {
+    margin: 0;
+    font-family: "Songti SC", "STSong", Georgia, serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 500;
+    line-height: 1.08;
+}
+
+.dashboard-heading h1 span {
+    color: var(--green);
+}
+
+.dashboard-heading > p:last-child {
+    max-width: 40em;
+    margin: 22px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.profile-panel {
+    margin-top: 48px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.profile-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+.profile-heading h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.profile-heading span {
+    color: var(--success);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.profile-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0;
+    padding: 28px 0;
+}
+
+.profile-list div {
+    min-width: 0;
+}
+
+.profile-list dt {
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.profile-list dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.dashboard-actions {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+@media (max-width: 860px) {
+    .auth-shell {
+        grid-template-columns: 1fr;
+        min-height: calc(100vh - 24px);
+        margin: 12px;
+    }
+
+    .identity-panel {
+        min-height: 300px;
+        padding: 30px;
+    }
+
+    .identity-copy h1 {
+        font-size: 46px;
+    }
+
+    .form-panel {
+        padding: 42px 28px 52px;
+    }
+
+    .profile-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .identity-panel {
+        min-height: 250px;
+        padding: 24px;
+    }
+
+    .identity-copy h1 {
+        font-size: 38px;
+    }
+
+    .identity-copy > p:last-child {
+        margin-top: 18px;
+        font-size: 13px;
+    }
+
+    .panel-footnote {
+        display: none;
+    }
+
+    .form-panel {
+        padding: 36px 20px 44px;
+    }
+
+    .form-heading h2 {
+        font-size: 31px;
+    }
+
+    .topbar {
+        padding: 20px 18px;
+    }
+
+    .session-badge {
+        display: none;
+    }
+
+    .dashboard {
+        padding: 46px 18px 70px;
+    }
+
+    .dashboard-heading h1 {
+        font-size: 42px;
+    }
+
+    .profile-panel {
+        padding: 22px;
+    }
+
+    .profile-list {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .dashboard-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .submit-button.compact {
+        width: 100%;
+    }
+}

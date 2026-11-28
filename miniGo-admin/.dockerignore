@@ -1,0 +1,8 @@
+.git
+.idea
+**/*.iml
+**/*.log
+**/target/*
+!miniGo-admin-bootstrap/target/miniGo-admin-bootstrap-1.0-SNAPSHOT.jar
+logs
+compose.yaml
